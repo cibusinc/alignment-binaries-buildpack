@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-echo "--- {}"
+# adding installed binaries to PATH
+echo "---"
+echo "addons:"
+echo "config_vars:"
+echo " PATH: $PATH:/app/vendor/muscle"
+echo "default_process_types:"
