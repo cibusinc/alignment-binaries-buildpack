@@ -4,5 +4,5 @@
 echo "---"
 echo "addons:"
 echo "config_vars:"
-echo " PATH: $PATH:/app/vendor/muscle"
+echo "  PATH: $PATH:/app/vendor/muscle"
 echo "default_process_types:"
