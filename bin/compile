@@ -12,3 +12,7 @@ mkdir -p vendor/muscle
 tar -C vendor/muscle -xvzf muscle.tar.gz
 # clean up
 rm muscle.tar.gz
+
+# add profile-d scripts to set up PATH
+mkdir -p $build/.profile.d
+echo 'PATH=$PATH:$HOME/vendor/muscle' > $build/.profile.d/alignment_algorithms.sh
