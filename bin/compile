@@ -5,10 +5,10 @@ echo "-----> Installing muscle."
 # change to build dir
 cd $1
 # download muscle from s3
-curl https://s3-us-west-2.amazonaws.com/sif-sprint/alignment_algorithms/muscle/muscle3.8.31_i86linux64.tar.gz -L -o muscle.tar.gz
+curl https://s3-us-west-2.amazonaws.com/sif-sprint/alignment_algorithms/muscle/muscle_linux.gzip -L -o muscle.tar.gz
 # make target dir
 mkdir -p vendor/muscle
 # unzip
-tar -C vendor/muscle -xvfz muscle.tar.gz
+tar -C vendor/muscle -xvzf muscle.tar.gz
 # clean up
 rm muscle.tar.gz
