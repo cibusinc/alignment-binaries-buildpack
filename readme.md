@@ -1,6 +1,6 @@
 # Heroku Buildpack: alignment programs
 
-Build alignment algorithm binaries on heroku so that we could run them from the main alignment app.
+Build alignment algorithm binaries on heroku so that we could run them from the main alignment app. Based on this repo: [link](https://github.com/ryandotsmith/null-buildpack).
 
 ## Basics on Custom Heroku Buildpacks
 
