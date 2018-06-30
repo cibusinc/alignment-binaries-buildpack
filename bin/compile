@@ -24,3 +24,9 @@ done
 echo "-----> Setting up PATH"
 mkdir -p .profile.d
 echo 'PATH=$PATH:$HOME/vendor' > .profile.d/alignment_algorithms.sh
+
+# setting ssh known_host
+echo "-----> setting ssh known_host"
+cd $HOME
+mkdir -p $HOME/.ssh
+ssh-keyscan ec2-34-207-194-127.compute-1.amazonaws.com >> $HOME/.ssh/known_hosts
