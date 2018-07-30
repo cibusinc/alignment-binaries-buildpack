@@ -20,6 +20,9 @@ do
 
 done
 
+# cp database.yml
+cp config/database.yml.example config/database.yml
+
 # add profile-d scripts to set up PATH
 echo "-----> Setting up PATH"
 mkdir -p .profile.d
