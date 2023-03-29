@@ -4,7 +4,12 @@
 # change to build dir
 cd $1
 
-ls $3
+# export required ENV variables in $3(the ENV_DIR)
+# https://devcenter.heroku.com/articles/buildpack-api#bin-compile-usage
+for evar in AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_DEFAULT_REGION S3_SHARED_BUCKET_NAME
+do
+  export "$evar=$(cat $3/$evar)"
+done
 
 # make target dir
 mkdir -p vendor
@@ -13,8 +18,7 @@ for PROGRAM in muscle clustalw2 clustalo
 do
   echo "  -----> Installing ${PROGRAM}"
   # download from s3
-  exit 1
-  aws s3 cp s3://sif-static-files-cibus/alignment_algorithms/${PROGRAM}_linux.tar.gz ${PROGRAM}.tar.gz
+  aws s3 cp s3://${S3_SHARED_BUCKET_NAME}/alignment_algorithms/${PROGRAM}_linux.tar.gz ${PROGRAM}.tar.gz
   # unzip
   tar -C vendor -xvzf ${PROGRAM}.tar.gz
   # clean up
