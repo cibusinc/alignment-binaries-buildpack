@@ -4,6 +4,8 @@
 # change to build dir
 cd $1
 
+ls $3
+
 # make target dir
 mkdir -p vendor
 
@@ -11,6 +13,7 @@ for PROGRAM in muscle clustalw2 clustalo
 do
   echo "  -----> Installing ${PROGRAM}"
   # download from s3
+  exit 1
   aws s3 cp s3://sif-static-files-cibus/alignment_algorithms/${PROGRAM}_linux.tar.gz ${PROGRAM}.tar.gz
   # unzip
   tar -C vendor -xvzf ${PROGRAM}.tar.gz
